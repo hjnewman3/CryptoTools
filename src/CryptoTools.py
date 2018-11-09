@@ -11,9 +11,7 @@ class CryptoTools(object):
             return CryptoTools.gcd(self, n, x % n)
 
     # returns the inverse of 2 numbers
-    def inverse(self, x, n, doPrint):
-        doPrint = bool(doPrint)
-   
+    def inverse(self, x, n, showTable=None):
         qi = [0]
         ri = []
         si = [1, 0]
@@ -42,13 +40,14 @@ class CryptoTools(object):
         si = si[2:]
         ti = ti[2:]
         
-        if doPrint !(False):
+        if showTable is not None:
             print('{0: ^5}'.format('i'), '{0: ^5}'.format('qi-1'), '{0: ^5}'.format('ri'), '{0: ^5}'.format('si'), '{0: ^5}'.format('ti'))
             print('{0: ^5}'.format('-----'), '{0: ^5}'.format('-----'), '{0: ^5}'.format('-----'), '{0: ^5}'.format('-----'), '{0: ^5}'.format('-----'))
             for k in range(len(i_count)):
                 print('{0: ^5}'.format(i_count[k]), '{0: ^5}'.format(qi[k]), '{0: ^5}'.format(ri[k]), '{0: ^5}'.format(si[k]), '{0: ^5}'.format(ti[k]))
         
-            print('\ninverse:')
+            print('\ninverse:', ti[len(ti)-2])
+            return ''
 
         return ti[len(ti)-2]
 
