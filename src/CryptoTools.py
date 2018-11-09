@@ -47,7 +47,7 @@ class CryptoTools(object):
                 print('{0: ^5}'.format(i_count[k]), '{0: ^5}'.format(qi[k]), '{0: ^5}'.format(ri[k]), '{0: ^5}'.format(si[k]), '{0: ^5}'.format(ti[k]))
         
             print('\ninverse:', ti[len(ti)-2])
-            return ''
+            return None
 
         return ti[len(ti)-2]
 
