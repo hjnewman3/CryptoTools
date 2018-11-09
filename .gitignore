@@ -1,2 +1,5 @@
 *.class
 *.json
+
+/.vscode
+/__pycache__:
