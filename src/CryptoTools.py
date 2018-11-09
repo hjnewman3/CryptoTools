@@ -114,8 +114,8 @@ class CryptoTools(object):
         q = int(q)
         e = int(e)
         x = int(x)
-        n = p*q
-        phi_n = (p-1)*(q-1)
+        n = p * q
+        phi_n = (p-1) * (q-1)
 
         d = CryptoTools.inverse(self, e, phi_n)
         if d < 0:
@@ -124,9 +124,52 @@ class CryptoTools(object):
         y = x ** e % n
         x = y ** d % n
 
+        print('Results of RSA with the given values: p =', p, 'q =', q, 'e or d =', e, 'x =', x)
         print('{0: >10}'.format('n ='), '{0: <5}'.format(n))
         print('{0: >10}'.format('phi_n ='), '{0: <5}'.format(phi_n))
         print('{0: >10}'.format('e or d ='), '{0: <5}'.format(e))
         print('{0: >10}'.format('e or d ='), '{0: <5}'.format(d))
         print('{0: >10}'.format('x ='), '{0: <5}'.format(x))
         print('{0: >10}'.format('y ='), '{0: <5}'.format(y))
+
+    # returns all of the values for CRT
+    def crt(self, p, q, e, y):
+        p = int(p)
+        q = int(q)
+        e = int(e)
+        y = int(y)
+        n = p * q
+        phi_n = (p-1) * (q-1)
+
+        d = CryptoTools.inverse(self, e, phi_n)
+        if d < 0:
+            d = phi_n + d
+
+        dp = d % (p-1)
+        dq = d % (q-1)
+
+        cp = CryptoTools.inverse(self, q, p)
+        if cp < 0:
+            cp = cp + p
+
+        cq = CryptoTools.inverse(self, p, q)
+        if cq < 0:
+            cq = cq + q
+            
+        yp = y % p
+        yq = y % q
+
+        xp = yp ** dp % p
+        xq = yq ** dq % q
+
+        x = y ** d % n
+
+        print('Results of CRT with the given values: p =', p, 'q =', q, 'e =', e, 'y =', y)
+        print('{0: >10}'.format('p ='), '{0: <5}'.format(p), '{0: >10}'.format('q ='), '{0: <5}'.format(q))
+        print('{0: >10}'.format('n ='), '{0: <5}'.format(n), '{0: >10}'.format('phi_n ='), '{0: <5}'.format(phi_n))
+        print('{0: >10}'.format('x ='), '{0: <5}'.format(x),'{0: >10}'.format('y ='), '{0: <5}'.format(y))
+        print('{0: >10}'.format('e ='), '{0: <5}'.format(e), '{0: >10}'.format('d ='), '{0: <5}'.format(d))
+        print('{0: >10}'.format('dp ='), '{0: <5}'.format(dp), '{0: >10}'.format('dq ='), '{0: <5}'.format(dq))
+        print('{0: >10}'.format('cp ='), '{0: <5}'.format(cp), '{0: >10}'.format('cq ='), '{0: <5}'.format(cq))
+        print('{0: >10}'.format('yp ='), '{0: <5}'.format(yp), '{0: >10}'.format('yq ='), '{0: <5}'.format(yq))
+        print('{0: >10}'.format('xp ='), '{0: <5}'.format(xp), '{0: >10}'.format('xq ='), '{0: <5}'.format(xq))
