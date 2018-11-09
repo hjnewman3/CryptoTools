@@ -1,9 +1,9 @@
 # CryptoTools
-I'm studying Cryptography at the University of New Orelans, CSCI 4130. I developed a library to assist in the calculations used during the course. 
+I'm studying Cryptography at the University of New Orleans, CSCI 4130. I developed a library to assist in the calculations used during the course. 
 
 ## Functions:
 - gcd(x, n)
-- inverse(x, n, showTable)
+- inverse(x, n, showTable=None)
 - sq_mult(x, e, m)
 - rsa(p, q, e, x)
 - crt(p, q, e, y)
