@@ -1,4 +1,4 @@
-from CryptoTools import CryptoTools
+from cryptotools import CryptoTools
 ct = CryptoTools()
 
 # runs a test on the RSA function
