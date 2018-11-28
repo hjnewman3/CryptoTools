@@ -123,8 +123,6 @@ class CryptoTools(object):
 
         y = pow(x, e, n)
         x = pow(y, d, n)
-        #y = x ** e % n
-        #x = y ** d % n
 
         print('Results of RSA with the given values: p =', p, 'q =', q, 'e or d =', e, 'x =', x)
         print('{0: >10}'.format('n ='), '{0: <5}'.format(n))
