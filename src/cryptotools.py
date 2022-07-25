@@ -19,6 +19,9 @@ class CryptoTools(object):
         i = 1
         i_count = [0, 1]
 
+        if x < n:
+            x, n = n, x
+
         while x != 0:
             i += 1
             i_count.append(i)

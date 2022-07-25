@@ -1,9 +1,9 @@
 from fastapi import FastAPI
-from routers import gcd, inverse
+from routers import GreatestCommonDivisorRouter, InverseRouter
 
 app = FastAPI()
-app.include_router(gcd.router)
-app.include_router(inverse.router)
+app.include_router(GreatestCommonDivisorRouter.router)
+app.include_router(InverseRouter.router)
 
 @app.get("/")
 def hello():
