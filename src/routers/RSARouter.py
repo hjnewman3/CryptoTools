@@ -1,6 +1,6 @@
 from fastapi import APIRouter
-from models import RSA
-from routers import ExtendedEuclideanRouter, GreatestCommonDivisorRouter
+from src.models import RSA
+from src.routers import ExtendedEuclideanRouter, GreatestCommonDivisorRouter
 
 router = APIRouter(
   prefix='/rsa',

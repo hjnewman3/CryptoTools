@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from models import GreatestCommonDivisor
+from src.models import GreatestCommonDivisor
 
 router = APIRouter(
   prefix='/gcd',

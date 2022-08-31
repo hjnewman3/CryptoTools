@@ -1,6 +1,6 @@
 from fastapi import APIRouter
-from models import ExtendedEuclidean
-from routers import GreatestCommonDivisorRouter
+from src.models import ExtendedEuclidean
+from src.routers import GreatestCommonDivisorRouter
 
 router = APIRouter(
   prefix='/inverse',

@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routers import ExtendedEuclideanRouter, GreatestCommonDivisorRouter, RSARouter, SquareAndMultiplyRouter
+from src.routers import ExtendedEuclideanRouter, GreatestCommonDivisorRouter, RSARouter, SquareAndMultiplyRouter
 
 app = FastAPI()
 app.include_router(GreatestCommonDivisorRouter.router)

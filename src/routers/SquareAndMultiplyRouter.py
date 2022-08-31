@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from models import SquareAndMultiply
+from src.models import SquareAndMultiply
 
 router = APIRouter(
     prefix='/square-and-multiply',
