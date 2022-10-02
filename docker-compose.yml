@@ -3,8 +3,8 @@ version: '3.8'
 ## DEFINE SERVICES
 services:
   ## CRYPTO API
-  crypto-api:
-    container_name: CRYPTO-API-STANDALONE
+  crypto-tools-api:
+    container_name: CRYPTO-TOOLS-API
     image: crypto-tools-api:dev
     build: ./
     command: uvicorn src.app:app --host 0.0.0.0 --port 4130
