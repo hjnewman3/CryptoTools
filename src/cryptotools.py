@@ -19,6 +19,9 @@ class CryptoTools(object):
         i = 1
         i_count = [0, 1]
 
+        if x < n:
+            x, n = n, x
+
         while x != 0:
             i += 1
             i_count.append(i)
@@ -54,12 +57,13 @@ class CryptoTools(object):
     # returns the result of the SQ / Mult of an exponent
     def sq_mult(self, x, e, m):
         org_e = e
-        e = bin(e)[3:]
+        e = bin(e)[2:]
+        print(e)
         ops = []
         result = []
         result.append(x)
         org_x = x
-        binary = [1]
+        binary = []
         exp = '1'
         exp_list = []
         print('Steps to solve', x, '^', org_e, 'mod', m)
@@ -100,7 +104,7 @@ class CryptoTools(object):
                 exp = exp[:-1]
                 exp = exp + '1'
                 exp_list.append(exp)
-
+        print(result)
         result = result[1:]
 
         print()  
